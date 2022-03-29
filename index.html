@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="js/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap/3.3.6/bootstrap.min.css">
+    <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/header_nav.css">
+    <link rel="stylesheet" href="css/header_search.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/content_carousel.css">
+    <link rel="stylesheet" href="css/product_list.css">
+</head>
+<body>
+    <!--header-->
+    <nav class="top">
+        <a href="#">
+            <span class="glyphicon glyphicon glyphicon-home redColor"></span>
+            TianMao Home
+        </a>
+
+        <span>Welcome to TianMao</span>
+        <a href="login.html">Log in</a>
+        <a href="#">Register</a>
+
+        <span class="pull-right">
+            <a href="#">My order</a>
+            <a href="#">
+                <span class="glyphicon glyphicon-shopping-cart redColor"></span>
+               My cart<strong>0</strong>件
+            </a>
+        </span>
+
+    </nav>
+
+    <!--search box-->
+    <div>
+        <a href="#"><img src="images/site/logo.gif" alt="" id="logo"></a>
+
+        <div class="searchDiv">
+            <input type="text" name="keyword" placeholder="Mabook pro 2021">
+            <button type="submit" class="searchButton">Search</button>
+            <div class="searchBelow">
+                <span><a href="#">Clothes</a>   <span>|</span> </span>
+                <span><a href="#">Games</a>   <span>|</span> </span>
+                <span><a href="#">Laptop</a>   <span>|</span> </span>
+                <span><a href="#">TV</a>   <span>|</span> </span>
+                <span><a href="#">Milk</a>   <span>|</span> </span>
+                <span><a href="#">Sport</a>    </span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--product list-->
+     <script>
+        $(function () {
+            $("div.rightMenu span").mouseenter(function () {
+                var left = $(this).position().left;
+                var top = $(this).position().top;
+                var width = $(this).css("width");
+                var destLeft = parseFloat(left) + parseFloat(width)/2;
+                $("img#catear").css("left", destLeft);
+                $("img#catear").css("top", top+150);
+                $("img#catear").fadeIn(500);
+            });
+            $("div.rightMenu span").mouseleave(function () {
+                $("img#catear").hide();
+            });
+        });
+    </script>
+
+    <img src="images/site/catear.png" id="catear" class="catear" />
+
+
+    <script>
+        function showProductsAsideCategorys(cid){
+            $("div.eachCategory[cid="+cid+"]").css("background-color","white");
+            $("div.eachCategory[cid="+cid+"] a").css("color","#87CEFA");
+            $("div.productsAsideCategorys[cid="+cid+"]").show();
+        }
+
+        function hideProductsAsideCategorys(cid) {
+            $("div.eachCategory[cid="+cid+"]").css("background-color","#e2e2e3");
+            $("div.eachCategory[cid="+cid+"] a").css("color","#000");
+            $("div.productsAsideCategorys[cid="+cid+"]").hide();
+        }
+
+        $(function () {
+            $("div.eachCategory").mouseenter(function () {
+                var cid=$(this).attr("cid");
+                showProductsAsideCategorys(cid);
+            });
+            $("div.eachCategory").mouseleave(function () {
+                var cid=$(this).attr("cid");
+                hideProductsAsideCategorys(cid);
+            });
+            $("div.productsAsideCategorys").mouseenter(function () {
+                var cid=$(this).attr("cid");
+                showProductsAsideCategorys(cid);
+            });
+            $("div.productsAsideCategorys").mouseleave(function () {
+                var cid=$(this).attr("cid");
+                hideProductsAsideCategorys(cid);
+            });
+        });
+    </script>
+
+    <div class="categoryWithCarousel">
+        <!--navigation-->
+        <div class="headbar">
+            <div class="head">
+                <span class="glyphicon glyphicon-th-list" style="margin-left:10px;"></span>
+                <span style="margin-left:10px">Category</span>
+            </div>
+
+            <div class="rightMenu">
+                <span><a href="#"><img src="images/site/chaoshi.png" alt=""></a></span>
+                <span><a href="#"><img src="images/site/guoji.png" alt=""></a></span>
+                <span><a href="#">Laptop monitor</a></span>
+                <span><a href="#">Air conditioner</a></span>
+            </div>
+        </div>
+
+
+        <div style="position: relative;left: 0;top: 0;">
+            <div class="categoryMenu">
+                <div class="eachCategory" cid="83">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Laptop
+                    </a>
+                </div>
+                <div class="eachCategory" cid="82">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Laptop monitor
+                </a>
+                </div>
+                <div class="eachCategory" cid="81">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Sofa
+                </a>
+                </div>
+                <div class="eachCategory" cid="80">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Air conditioner
+                </a>
+                </div>
+                <div class="eachCategory" cid="79">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Bicycle
+                </a>
+                </div>
+                <div class="eachCategory" cid="78">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Robot cleaner
+                </a>
+                </div>
+                <div class="eachCategory" cid="77">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Fridge
+                </a>
+                </div>
+                <div class="eachCategory" cid="76">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Washing maschine
+                </a>
+                </div>
+                <div class="eachCategory" cid="75">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Fruits
+                </a>
+                </div>
+                <div class="eachCategory" cid="74">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Watch
+                </a>
+                </div>
+                <div class="eachCategory" cid="73">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Shoes
+                </a>
+                </div>
+                <div class="eachCategory" cid="72">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Handbags
+                </a>
+                </div>
+                <div class="eachCategory" cid="71">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Suits
+                </a>
+                </div>
+                <div class="eachCategory" cid="69">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Fashion
+                </a>
+                </div>
+                <div class="eachCategory" cid="68">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Woman clothes
+                </a>
+                </div>
+                <div class="eachCategory" cid="64">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Glasses
+                </a>
+                </div>
+                <div class="eachCategory" cid="60">
+                    <span class="glyphicon glyphicon-link"></span>
+                    <a href="#">
+                    Decorations
+                </a>
+                </div>
+            </div>
+        </div>
+        <div style="position: relative;left: 0;top: 0;">
+
+            <script>
+                $(function () {
+                    $("div.productsAsideCategorys div.row a").each(function () {
+                        var v=Math.round(Math.random()*6);
+                        if(v==1){
+                            $(this).css("color","#87CEFA");
+                        }
+                    });
+                });
+            </script>
+
+
+
+            <div role="listbox" class="carousel-inner">
+                <div class="item active">
+                    <a href="#"><img src="images/lunbo/1.jpg" class="carousel carouselImage"></a>
+        </div>
+
+    </div>
+
+    <div class="homepageCategoryProducts">
+
+        <div class="eachHomepageCategoryProducts">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">Sun glasses</span>
+            <br>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/9543.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">[Promotion]
+                           Rayban LightRay sun glasses
+                            </span>
+                </a>
+                <span class="productPrice">
+                            999 SEK
+                        </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img src="images/productSingle_middle/9532.jpg" width="100px"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                        [Promotion]Summer glasses 2021
+                    </span>
+                </a>
+                <span class="productPrice">
+                   799 SEK
+                </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img src="images/productSingle_middle/9521.jpg" width="100px"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                        [Promotion]Pasha sun glasses 2021
+                    </span>
+                </a>
+                <span class="productPrice">
+                   699 SEK
+                </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/9510.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                        [Promotion]Color-changing glasses radiation protection
+                            </span>
+                </a>
+                <span class="productPrice">
+                            1199 SEK
+                        </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/9499.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                       New Men's Polarized Sunglasses Day and Night Sunglasses
+                            </span>
+                </a>
+                <span class="productPrice">
+                            1099 SEK
+                        </span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="eachHomepageCategoryProducts">
+            <div class="left-mark"></div>
+            <span class="categoryTitle">Safety seats</span>
+            <br>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/10192.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                            Newborn Infant Car Seat
+                            </span>
+                </a>
+                <span class="productPrice">
+                            799 SEK
+                        </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/10181.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                            REEBABY Child Safety Seats
+                            </span>
+                </a>
+                <span class="productPrice">
+                            1399 SEK
+                        </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/10170.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">[Promotion]
+                            REEBABY Child seats 9 months-12 years old
+                            </span>
+                </a>
+                <span class="productPrice">
+                            1299 SEK
+                        </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/10159.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">[热销]
+                           Goodbaby Child seats
+                            </span>
+                </a>
+                <span class="productPrice">
+                            1,199 SEK
+                        </span>
+            </div>
+            <div class="productItem">
+                <a href="#"><img width="100px" src="images/productSingle_middle/10148.jpg"></a>
+                <a href="#" class="productItemDescLink">
+                    <span class="productItemDesc">
+                            Hilton isofix Child Seats
+                            </span>
+                </a>
+                <span class="productPrice">
+                            1999 SEK
+                        </span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+        <img src="images/site/end.png" class="endpng" id="endpng">
+    </div>
+
+
+    <!--footer-->
+        <div class="footer">
+            <img src="images/site/cateye.png" class="cateye" id="cateye">
+            <div class="copyright" id="copyright">
+
+                <div class="white_link">
+                    <a href="#"> Alibaba Group</a><span class="slash">|</span>
+                    <a href="#"> Taobao</a><span class="slash">|</span>
+                    <a href="#">TianMao</a><span class="slash">|</span>
+                    <a href="#"> Alipay</a><span class="slash">|</span>
+                    <a href="#"> Soon</a><span class="slash">|</span>
+                    <a href="#"> Soon</a><span class="slash">|</span>
+                    <a href="#"> Soon</a><span class="slash">|</span>
+                    <a href="#"> Soon</a><span class="slash">|</span>
+                    <a href="#"> Soon</a><span class="slash">|</span>
+                    <a href="#"> Soon</a><span class="slash">|</span>
+                    <a href="#"> Soon  </a>
+                </div>
+
+                <div class="license">
+                    <span>Liscense:B2-20110446</span>
+                    <span>xxxx[2015]0295-065xxx</span>
+                    <div>xxxxx2012-0005xxxxx</div>
+                    <div class="copyRightYear">© Copyright 2003-2017 TMALL.COM </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
