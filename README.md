@@ -7,3 +7,8 @@
 - Header and footer
 
 ## Screenshots 
+![screenshot1](screenshot/screenshot1.png) 
+
+![screenshot2](screenshot/screenshot2.png)
+ 
+![screenshot3](screenshot/screenshot3.png)
