@@ -9,4 +9,5 @@ This is a frontend static exercise that not using frontend framework but ony usi
 
 ## Screenshots 
 ![screenshot1](screenshot/screenshot1.png) 
-
+![screenshot1](screenshot/screenshots2.png)
+![screenshot1](screenshot/screenshots3.png)
