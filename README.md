@@ -10,6 +10,3 @@ This is a frontend static exercise that not using frontend framework but ony usi
 ## Screenshots 
 ![screenshot1](screenshot/screenshot1.png) 
 
-![screenshot2](screenshot/screenshot2.png)
- 
-![screenshot3](screenshot/screenshot3.png)
